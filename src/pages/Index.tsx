@@ -115,14 +115,28 @@ export default function Index() {
               style={{ animationDelay: `${index * 0.1}s` }}
               onClick={() => setSelectedItem(item)}
             >
-              <div className="relative overflow-hidden bg-muted aspect-square">
-                <img
-                  src={item.imageUrl}
-                  alt={item.title}
-                  className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
-                />
+              <div className="relative overflow-hidden bg-gradient-to-br from-primary/10 via-secondary/20 to-accent/10 aspect-square flex items-center justify-center">
+                <div className="text-center p-6 z-10">
+                  <div className="text-6xl mb-4">
+                    {item.id === 1 && '⛪'}
+                    {item.id === 2 && '🪆'}
+                    {item.id === 3 && '🩰'}
+                    {item.id === 4 && '🫖'}
+                    {item.id === 5 && '👑'}
+                    {item.id === 6 && '🏠'}
+                    {item.id === 7 && '🏺'}
+                    {item.id === 8 && '🥚'}
+                  </div>
+                  <div className="text-4xl font-cormorant font-bold text-primary/80">
+                    {item.title.split(' ')[0]}
+                  </div>
+                </div>
+                <div className="absolute inset-0 opacity-10 pointer-events-none" style={{
+                  backgroundImage: `repeating-linear-gradient(45deg, transparent, transparent 10px, currentColor 10px, currentColor 11px)`,
+                  color: 'hsl(var(--primary))'
+                }}></div>
                 <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                <div className="absolute top-3 right-3 bg-secondary/90 backdrop-blur-sm text-accent-foreground px-3 py-1 rounded-full text-xs font-medium">
+                <div className="absolute top-3 right-3 bg-secondary/90 backdrop-blur-sm text-accent-foreground px-3 py-1 rounded-full text-xs font-medium z-20">
                   {item.category}
                 </div>
               </div>
@@ -162,12 +176,21 @@ export default function Index() {
               </DialogHeader>
               
               <div className="mt-6 space-y-6">
-                <div className="relative overflow-hidden rounded-lg aspect-video bg-muted">
-                  <img
-                    src={selectedItem.imageUrl}
-                    alt={selectedItem.title}
-                    className="w-full h-full object-cover"
-                  />
+                <div className="relative overflow-hidden rounded-lg aspect-video bg-gradient-to-br from-primary/10 via-secondary/20 to-accent/10 flex items-center justify-center">
+                  <div className="text-9xl">
+                    {selectedItem.id === 1 && '⛪'}
+                    {selectedItem.id === 2 && '🪆'}
+                    {selectedItem.id === 3 && '🩰'}
+                    {selectedItem.id === 4 && '🫖'}
+                    {selectedItem.id === 5 && '👑'}
+                    {selectedItem.id === 6 && '🏠'}
+                    {selectedItem.id === 7 && '🏺'}
+                    {selectedItem.id === 8 && '🥚'}
+                  </div>
+                  <div className="absolute inset-0 opacity-10 pointer-events-none" style={{
+                    backgroundImage: `repeating-linear-gradient(45deg, transparent, transparent 10px, currentColor 10px, currentColor 11px)`,
+                    color: 'hsl(var(--primary))'
+                  }}></div>
                 </div>
 
                 <div className="space-y-6">
